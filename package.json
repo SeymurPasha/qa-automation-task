@@ -1,0 +1,17 @@
+{
+  "name": "new-folder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mochawesome": "^6.3.1"
+  },
+  "dependencies": {
+    "cypress-mochawesome-reporter": "^2.3.0"
+  }
+}

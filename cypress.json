@@ -1,0 +1,13 @@
+{
+    "env" : {
+    "username": "Seymur Pashayev",
+    "password": "Pashayev1991"
+},
+
+"reporter": "cypress-mochawesome-reporter",
+"reporterOptions": {
+    "reportDir": "cypress/report",
+    "charts": true,
+    "reportPageTitle": "custom-title"
+  }
+}

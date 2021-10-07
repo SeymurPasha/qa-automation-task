@@ -1,0 +1,169 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 3,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-10-07T12:16:10.967Z",
+    "end": "2021-10-07T12:16:28.075Z",
+    "duration": 17108,
+    "testsRegistered": 4,
+    "passPercent": 75,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "32f69f0a-da24-4789-835f-129016a3e27c",
+      "title": "",
+      "fullFile": "cypress/integration/task/task.spec.js",
+      "file": "cypress/integration/task/task.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4597b34c-3e15-49d2-a188-c860bd385f24",
+          "title": "QA Automation test task",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Fill in the “Username” and “Password” input fields and click the “LogIn” button",
+              "fullTitle": "QA Automation test task Fill in the “Username” and “Password” input fields and click the “LogIn” button",
+              "timedOut": null,
+              "duration": 2474,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const login = new _login.default();\nlogin.userName().type(Cypress.env('username'));\nlogin.password().type(Cypress.env('password'));\nlogin.loginBtn().click();",
+              "err": {},
+              "uuid": "2448b868-4d00-42d2-8e87-a3eebeae7073",
+              "parentUUID": "4597b34c-3e15-49d2-a188-c860bd385f24",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Use an assertion library and verify that all the elements are present on the page",
+              "fullTitle": "QA Automation test task Use an assertion library and verify that all the elements are present on the page",
+              "timedOut": null,
+              "duration": 1353,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const login = new _login.default();\nconst errors = new _errorMessages.default();\nlogin.userName();\nlogin.password();\nlogin.loginBtn();\nerrors.message().should('have.length', 2);\ncy.wait(1000);",
+              "err": {},
+              "uuid": "f2f4bcf0-b31f-47ac-a48c-d390a62c53a1",
+              "parentUUID": "4597b34c-3e15-49d2-a188-c860bd385f24",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify that all the error messages appear",
+              "fullTitle": "QA Automation test task Verify that all the error messages appear",
+              "timedOut": null,
+              "duration": 4853,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const errors = new _errorMessages.default();\nconst login = new _login.default();\nlogin.loginBtn().click();\nerrors.message().first().should('have.text', 'Please enter username.');\nerrors.message().last().should('have.text', 'Please enter your password.');\ncy.wait(1000);\nlogin.userName().type(Cypress.env('username'));\nlogin.password().type(Cypress.env('password'));\nlogin.loginBtn().click();\nerrors.message().first().should('have.text', 'No account found with that username.');\ncy.wait(1000);",
+              "err": {},
+              "uuid": "cd0721e2-53de-45a8-963d-a3f87ca91c8a",
+              "parentUUID": "4597b34c-3e15-49d2-a188-c860bd385f24",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Create a test-case that will fail because of unsuccessful login",
+              "fullTitle": "QA Automation test task Create a test-case that will fail because of unsuccessful login",
+              "timedOut": null,
+              "duration": 5425,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const errors = new _errorMessages.default();\nconst login = new _login.default();\nlogin.userName().type(Cypress.env('username'));\nlogin.password().type(Cypress.env('password'));\nlogin.loginBtn().click();\nerrors.message().first().should('have.length', 0);\ncy.wait(1000);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Too many elements found. Found '1', expected '0'.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Too many elements found. Found '1', expected '0'.\n    at Context.eval (https://www.pecodesoftware.com/__cypress/tests?p=cypress\\integration\\task\\task.spec.js:226:30)",
+                "diff": null
+              },
+              "uuid": "de124898-0c1a-4f50-b833-cc24cf6f880d",
+              "parentUUID": "4597b34c-3e15-49d2-a188-c860bd385f24",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2448b868-4d00-42d2-8e87-a3eebeae7073",
+            "f2f4bcf0-b31f-47ac-a48c-d390a62c53a1",
+            "cd0721e2-53de-45a8-963d-a3f87ca91c8a"
+          ],
+          "failures": [
+            "de124898-0c1a-4f50-b833-cc24cf6f880d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 14105,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\report\\.jsons",
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
